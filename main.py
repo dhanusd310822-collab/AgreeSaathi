@@ -162,13 +162,36 @@ with tab1:
 # ==========================================
 with tab2:
     st.header(t["schemes_header"])
+    
+    # Initialize separate application states for each scheme if not exists
+    if "scheme_status" not in st.session_state:
+        st.session_state["scheme_status"] = {}
+
+    SCHEMES_DB = [
+        {"id": 1, "name_en": "Pradhan Mantri Fasal Bima Yojana (PMFBY)", "name_kn": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಫಸಲ್ ಬಿಮಾ ಯೋಜನೆ", "category": "Crop Insurance", "required_documents": ["Aadhaar", "Land RTC", "Bank Passbook"]},
+        {"id": 2, "name_en": "PM-KISAN Samman Nidhi", "name_kn": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಕಿಸಾನ್ ಸಮ್ಮಾನ್ ನಿಧಿ", "category": "Income Support", "required_documents": ["Aadhaar", "Land Ownership Papers", "Bank Passbook"]}
+    ]
+
     for scheme in SCHEMES_DB:
+        scheme_id = scheme['id']
+        display_name = scheme['name_en'] if lang_code == "en" else scheme['name_kn']
+        
         with st.container():
-            display_name = scheme['name_en'] if lang_code == "en" else scheme['name_kn']
             st.subheader(display_name)
+            st.write(f"Category: {scheme['category']}")
             st.write(f"Required Documents: {', '.join(scheme['required_documents'])}")
-            if st.button(t["apply_btn"], key=f"apply_{scheme['id']}"):
-                st.success(f"Applied successfully for {display_name}")
+            
+            # Check if this specific scheme was applied
+            is_applied = st.session_state["scheme_status"].get(scheme_id, False)
+            
+            col_btn1, col_btn2 = st.columns([1, 4])
+            with col_btn1:
+                if not is_applied:
+                    if st.button(t["apply_btn"], key=f"apply_btn_{scheme_id}"):
+                        st.session_state["scheme_status"][scheme_id] = True
+                        st.rerun()
+                else:
+                    st.success("Applied")
             st.divider()
 
 # ==========================================
