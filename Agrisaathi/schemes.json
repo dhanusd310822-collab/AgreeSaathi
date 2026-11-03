@@ -1,0 +1,62 @@
+[
+  {
+    "id": "pmfby_001",
+    "name_en": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "name_kn": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಫಸಲ್ ಬಿಮಾ ಯೋಜನೆ",
+    "category": "Crop Insurance",
+    "eligibility_criteria": {
+      "landholder_type": ["Small", "Marginal", "Tenant", "Sharecropper"],
+      "crop_types": ["Kharif", "Rabi", "Commercial", "Horticultural"],
+      "max_land_hectares": null,
+      "state": "All India"
+    },
+    "required_documents": [
+      "Aadhaar Card",
+      "Land Ownership Document (RTC/Pahani)",
+      "Bank Account Passbook (Aadhaar linked)",
+      "Sowing Certificate / Declaration"
+    ],
+    "application_link": "https://pmfby.gov.in"
+  },
+  {
+    "id": "pmkisan_002",
+    "name_en": "PM-KISAN Samman Nidhi",
+    "name_kn": "ಪಿಎಂ-ಕಿಸಾನ್ ಸಮ್ಮಾನ್ ನಿಧಿ",
+    "category": "Direct Income Support",
+    "eligibility_criteria": {
+      "landholder_type": ["Small", "Marginal"],
+      "crop_types": ["All"],
+      "max_land_hectares": 2.0,
+      "exclusions": ["Institutional landholders", "Income tax payers", "Government employees"],
+      "state": "All India"
+    },
+    "required_documents": [
+      "Aadhaar Card",
+      "Land Records (RTC/Khata)",
+      "Bank Account Details (Aadhaar-seeded)",
+      "Mobile Number linked to Aadhaar"
+    ],
+    "application_link": "https://pmkisan.gov.in"
+  },
+  {
+    "id": "krvn_003",
+    "name_en": "Karnataka Chief Minister Raitha Vidya Nidhi",
+    "name_kn": "ಮುಖ್ಯಮಂತ್ರಿ ರೈತ ವಿದ್ಯಾ ನಿಧಿ ಯೋಜನೆ",
+    "category": "Educational Scholarship",
+    "eligibility_criteria": {
+      "beneficiary": "Children of farmers and agricultural labourers",
+      "domicile": "Karnataka",
+      "education_level": "Class 11 to PG / Engineering / Medical / ITI",
+      "state": "Karnataka"
+    },
+    "required_documents": [
+      "Student Aadhaar Card",
+      "Parent's FRUITS ID (Farmer ID)",
+      "Previous Academic Marksheet",
+      "Aadhaar-linked Student Bank Passbook",
+      "Bonafide Certificate / Admission Proof"
+    ],
+    "application_link": "https://ssp.postmatric.karnataka.gov.in"
+  }
+]
+
