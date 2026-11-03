@@ -1,3 +1,5 @@
+streamlit
+streamlit-mic-recorder
 import json
 import streamlit as st
 import random
